@@ -4,12 +4,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import bsGamme.Eazy;
-import bsGamme.Game;
-import bsGamme.Hard;
-import bsGamme.IPlayer;
-import bsGamme.Medium;
-import bsGamme.Shoots;
+import gayet.simon.Eazy;
+import gayet.simon.Game;
+import gayet.simon.Hard;
+import gayet.simon.IPlayer;
+import gayet.simon.Medium;
+import gayet.simon.Shoots;
 
 public class TestIA {
 	
@@ -55,12 +55,10 @@ public class TestIA {
 			//choose beginer
 			gm.setCurrentplr(gm.getBeginer());
 			boolean finish = false;
-			int j = 0;
 			while (!finish){
 				gm.getCurrentplr().generateShoot(gm.getOtherIPlayer());
 				gm.changeCurrentPlr();
 				finish = gm.getCurrentplr().getFleet().isDestroyFleet();
-				j++;
 			}
 			gm.changeCurrentPlr();
 			if (gm.getCurrentplr().getNb() == 1){
@@ -71,7 +69,6 @@ public class TestIA {
 			}
 			gm.changeBeginer();
 			i++;
-			System.out.println(j);
 		}
 		System.out.println("Game 1 " + plyr1.getName() + " againts " + plyr2.getName()); 
 		System.out.println("For 100 game player " + plyr1.getName() + " win " + winPlyr11);
@@ -132,12 +129,14 @@ public class TestIA {
 			gm.getCurrentplr().initFleet();
 			
 			//choose beginer
+			int j = 0;
 			gm.setCurrentplr(gm.getBeginer());
 			boolean finish = false;
 			while (!finish){
 				gm.getCurrentplr().generateShoot(gm.getOtherIPlayer());
 				gm.changeCurrentPlr();
 				finish = gm.getCurrentplr().getFleet().isDestroyFleet();
+				j++;
 			}
 			gm.changeCurrentPlr();
 			if (gm.getCurrentplr().getNb() == 1){
@@ -148,11 +147,11 @@ public class TestIA {
 			}
 			gm.changeBeginer();
 			i++;
+			System.out.println(j);
 		}
 		System.out.println("Game 3 " + plyr1.getName() + " againts " + plyr2.getName()); 
 		System.out.println("For 100 game player " + plyr1.getName() + " win " + winPlyr13);
 		System.out.println("For 100 game player " + plyr2.getName() + " win " + winPlyr23);
-		
 		FileWriter fileWriter = null;
 		try {
 			fileWriter = new FileWriter(file);
