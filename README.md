@@ -7,3 +7,10 @@ It's battle ship game, with 3 mode: - Human vs Human
                                     - AI vs AI 
                                     
 How to use ? 
+
+give permision to run executable 
+  - "chmod +x *.sh"
+Play classic game : 
+  - "./executeBattleShip.sh"
+Test AI : 
+  - "./executeTestIA.sh" 
