@@ -38,16 +38,11 @@ public class Fleet {
 		}
 		else {
 			int j = initial.getLine();
-			//System.out.println("start j =" + j);
 			int last = j + shp.shipLenght();
-			//System.out.println("last =" + last);
 			while (i<this.shipList.size() && !contains){
-				//System.out.println("i = "+i+" j= "+j);
 				j = initial.getLine();
 				while(j<last && !contains){
-					//System.out.println("j = " +j);
 					currentCoord.setCoord(initial.getColumn()+Character.toString((char)(j)));
-					//System.out.println(currentCoord.getCoord());
 					if (currentCoord.isBetween(this.shipList.get(i).getStartCoord(), this.shipList.get(i).getEndCoord())){
 						contains = true; 
 					}
@@ -146,7 +141,7 @@ public class Fleet {
 		fleet.append(this.shipList.size());
 		fleet.append(" ship :");
 		for (int i=0; i<this.shipList.size(); i++){
-			fleet.append(" n°");
+			fleet.append(" num");
 			fleet.append(i+1);
 			fleet.append(" size ");
 			fleet.append(this.shipList.get(i).shipLenght());

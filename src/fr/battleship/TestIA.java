@@ -27,7 +27,7 @@ public class TestIA {
 			System.out.println("error, file creation fail ");
 			System.out.println("Perhaps, file already exist");
 		}
-		System.out.println("Le fichier ai_proof.csv est à la racine du projet");
+		System.out.println("File ai_proof.csv is in the project root");
 		
 		//Delimiter 
 	    String DELIMITER = File.pathSeparator;
@@ -129,14 +129,12 @@ public class TestIA {
 			gm.getCurrentplr().initFleet();
 			
 			//choose beginer
-			int j = 0;
 			gm.setCurrentplr(gm.getBeginer());
 			boolean finish = false;
 			while (!finish){
 				gm.getCurrentplr().generateShoot(gm.getOtherIPlayer());
 				gm.changeCurrentPlr();
 				finish = gm.getCurrentplr().getFleet().isDestroyFleet();
-				j++;
 			}
 			gm.changeCurrentPlr();
 			if (gm.getCurrentplr().getNb() == 1){
@@ -147,7 +145,6 @@ public class TestIA {
 			}
 			gm.changeBeginer();
 			i++;
-			System.out.println(j);
 		}
 		System.out.println("Game 3 " + plyr1.getName() + " againts " + plyr2.getName()); 
 		System.out.println("For 100 game player " + plyr1.getName() + " win " + winPlyr13);
@@ -200,7 +197,7 @@ public class TestIA {
 	            //fileWriter.flush(); close do flushing
 	            fileWriter.close();
 	        } catch (IOException e) {
-	            System.out.println("Error flushing/closing fileWriter !!!");
+	            System.out.println("Error flushing/closing fileWriter !");
 	            e.printStackTrace();
 	        }
 	    }

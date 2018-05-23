@@ -39,7 +39,6 @@ public class Shoots {
 		boolean contains = false;
 		int i = 0;
 		while( i<this.shootsList.size() && !contains ){
-			//System.out.println(this.shootsList.get(i).toString());
 			if (this.shootsList.get(i).equals(coord)) {
 				contains = true;
 			}
